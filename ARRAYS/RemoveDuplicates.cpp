@@ -1,0 +1,53 @@
+#include<bits/stdc++.h>
+using namespace std;
+//BRUTE FORCE APPROACH
+// void RemoveDuplicate(int arr[], int n){
+//     set<int>result;
+    
+    
+//     for (int i = 0; i < n; i++)
+//     {
+//         result.emplace(arr[i]);
+//     }
+//     // int k=result.size();
+//     // return k;
+   
+    
+    
+//     for(int x : result){
+//         cout<<x<<" ";
+//     }
+    
+// }
+
+
+
+
+
+
+int removeDuplicates(int arr[], int n){
+
+    int i = 0;
+
+    for(int j = 1; j < n; j++){
+
+        if(arr[j] != arr[i]){
+            i++;
+            arr[i] = arr[j];
+        }
+    }
+
+    return i + 1;   // unique elements count
+}
+
+int main(){
+
+    int arr[] = {1,1,1,2,2};
+    int n = sizeof(arr)/sizeof(arr[0]);
+
+    int k = removeDuplicates(arr,n);
+
+    for(int i = 0; i < k; i++){
+        cout << arr[i] << " ";
+    }
+}
