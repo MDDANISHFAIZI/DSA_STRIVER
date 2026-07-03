@@ -106,6 +106,40 @@ class Node{
             }
             
         }
+        return head;
+        
+    }
+    //Inserting of element in before the element which is given
+    Node* insertgivenel(Node* head, int el, int val){
+        if(head==NULL){
+            return NULL;
+        }
+        else if (head->data==val)
+        {
+            Node* temp= new Node(el,head);
+            head=temp;
+            return head;
+
+        }
+        Node* temp= head;
+       
+        while (temp!=nullptr)
+        {
+            
+            if (temp->next->data==val)
+            {
+                Node* tempu=new Node(el,temp->next);
+                temp->next=tempu;
+                return head;
+            }
+            else{
+                temp=temp->next;
+            }
+            
+        }
+        return head;
+        
+        
         
     }
 
@@ -119,7 +153,7 @@ int main(){
     vector<int>vec={1,2,3};
     Node* head=covertarraytoLL(vec);
 
-    head=insertkth(head,10,4);
+    head=insertgivenel(head,10,1);
 
    
      Node* temp=head;
